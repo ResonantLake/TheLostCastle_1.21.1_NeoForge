@@ -28,3 +28,24 @@
 <span style="font-size: 14px;">We always try to be aware of issues in our mods, if you experience a bug while playing, please report it in the comments or the "Issues" section to help us keep the experience fun and enjoyable for all players.<strong><br></strong></span>
 
  <span style="font-size: 14px;"><span style="color: #3366ff;" data-darkreader-inline-color=""><strong>&nbsp;<a style="color: #3366ff;" href="https://discord.gg/D9cxayDNSP" data-darkreader-inline-color="">CLICK HERE</a> </strong></span><strong>to&nbsp;</strong><strong>join our discord server to speak, chat, report problems o</strong><strong>r talk with us :)</strong></span>
+
+## Credits & License
+
+This is a backport of [The Lost Castle](https://github.com/Jack-Bagel/The-Lost-Castle)
+by Jack Bagel / Team Remastered (originally targeting Minecraft 1.21.5).
+
+- **Original mod**: https://github.com/Jack-Bagel/The-Lost-Castle
+- **Original author**: [@Jack-Bagel](https://github.com/Jack-Bagel)
+- **License**: GNU Lesser General Public License v3.0 only (LGPL-3.0-only) — see [LICENSE](LICENSE)
+
+### Port changes (1.21.5 → 1.21.1 NeoForge)
+
+- Downgraded NeoForge / NeoForm / Parchment versions in `gradle.properties`
+- Disabled the Fabric subproject in `settings.gradle`
+- Adjusted `FoundationProcessor` for 1.21.1 API (`getMinBuildHeight`/`getMaxBuildHeight`,
+  3-argument `ChunkAccess.setBlockState`)
+- Updated stronghold-disabling mixin signature to match 1.21.1
+  `ChunkGenerator.tryGenerateStructure` (9 parameters)
+- Moved the mixin from the `server` array to `mixins` so it applies in single player
+- Replaced a corrupted `castle_ml.nbt` with the equivalent file from the 1.20.X release of the same mod
+EOF

@@ -1,8 +1,6 @@
 package com.teamremastered.tlc.mixin;
 
 import com.teamremastered.tlc.config.ConfigHandler;
-import net.minecraft.resources.ResourceKey;
-import net.minecraft.world.level.Level;
 import net.minecraft.world.level.chunk.ChunkGenerator;
 import org.spongepowered.asm.mixin.Mixin;
 import net.minecraft.core.*;
@@ -31,7 +29,6 @@ public class DisableVanillaStrongholdsMixin {
             ChunkAccess chunkAccess,
             ChunkPos chunkPos,
             SectionPos sectionPos,
-            ResourceKey<Level> levelResourceKey,
             CallbackInfoReturnable<Boolean> cir
     ) {
         if (ConfigHandler.DISABLE_VANILLA_STRONGHOLD && structureSetEntry.structure().value().type() == StructureType.STRONGHOLD) {
